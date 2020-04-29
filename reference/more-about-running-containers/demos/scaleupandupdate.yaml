@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+spec:
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: core-server
+    spec:
+      containers:
+      - image: learnbook/aspnetcore-server:1.2
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Release"
+---
+apiVersion: v1
+kind: Service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: core-server
