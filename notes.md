@@ -7,5 +7,8 @@
 - `docker rm 442dd5b5521d` -> delete the container
 - `docker container prune -f` -> delete all stopped containers, `-f` stands for force
 - `docker build ./ -t webserver` -> to create a new image from current directory with name webserver
-- The -it switch allows me to stop the container using Ctrl-C from the command-line
-- The –rm switch ensures that the container is deleted once it has stopped
+- The `-it` -> switch allows me to stop the container using Ctrl-C from the command-line
+- The `–rm` -> switch ensures that the container is deleted once it has stopped
+- To create a new reference to the image, use `docker tag oldName yashkumarverma/newName`
+- `docker login -u yashkumarverma -p notsoeasy` -> to login
+- `.dockerignore` is docker's inhouse `.gitignore`
